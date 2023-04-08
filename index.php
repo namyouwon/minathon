@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | User Profile</title>
+  <title>Healing | Minathon 2023</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -149,10 +149,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle" src="https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360">
                 </div>
 
                 <h3 class="profile-username text-center">Nina Mcintire</h3>
-
                 <p class="text-muted text-center">Software Engineer</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
@@ -172,47 +172,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-
-            <!-- About Me Box -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">About Me</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Education</strong>
-
-                <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
-                </p>
-
-                <hr>
-
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-
-                <p class="text-muted">Malibu, California</p>
-
-                <hr>
-
-                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-
-                <p class="text-muted">
-                  <span class="tag tag-danger">UI Design</span>
-                  <span class="tag tag-success">Coding</span>
-                  <span class="tag tag-info">Javascript</span>
-                  <span class="tag tag-warning">PHP</span>
-                  <span class="tag tag-primary">Node.js</span>
-                </p>
-
-                <hr>
-
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
           </div>
           <!-- /.col -->
           <div class="col-md-9">
@@ -220,16 +179,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">Diary</a></li>
-                  <?php
-
-                  ?>
                   <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Today</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Activity</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
                   <!-- /.tab-pane -->
-                  <div class="active tab-pane" id="timeline">
+                    <div class="active tab-pane" id="timeline">
                     <!-- The timeline -->
                     <div class="timeline timeline-inverse">
                       <!-- timeline time label -->
@@ -254,7 +211,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="timeline-footer">
                               <a href="#" class="btn btn-primary btn-sm">Read more</a>
                             </div>
-                          </div>
+                          </div>  
                         </div>
                       <?php
                       }
@@ -278,6 +235,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           </div>
                         </div>
                         <div class="form-group row">
+                          <input type="file" class="form-control" id="customFile" />
+                        </div>
+                        <div class="form-group row">
                           <div class="offset-sm-2 col-sm-10">
                             <input type="submit" name="submitDiary" class="btn btn-success" value="Post"></input>
                           </div>
@@ -285,6 +245,106 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       </form>
                     </div>
                     <!-- /.tab-pane -->
+
+                    <div class="tab-pane" id="activity">
+                    <!-- Post -->
+                    <div class="post">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="user image">
+                        <span class="username">
+                          <a href="#">Cỏ xanh</a>
+                        </span>
+                        <span class="description">7:30 PM today</span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        Lorem ipsum represents a long-held tradition for designers,
+                        typographers and the like. Some people hate it and argue for
+                        its demise, but others ignore the hate as they create awesome
+                        tools to help create filler text for everyone from bacon lovers
+                        to Charlie Sheen fans.
+                      </p>
+
+                      <p>
+                        <a href="#" class="btn btn-success"> View Dairy</a>
+                        <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
+                        <span class="float-right">
+                        </span>
+                      </p>
+                    </div>
+                    <!-- /.post -->
+
+                    <!-- Post -->
+                    <div class="post clearfix">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="https://www.w3schools.com/howto/img_avatar2.png" alt="User Image">
+                        <span class="username">
+                          <a href="#">Sói xám</a>
+                        </span>
+                        <span class="description">3 days ago</span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        Lorem ipsum represents a long-held tradition for designers,
+                        typographers and the like. Some people hate it and argue for
+                        its demise, but others ignore the hate as they create awesome
+                        tools to help create filler text for everyone from bacon lovers
+                        to Charlie Sheen fans.
+                      </p>
+
+                      <p>
+                        <a href="#" class="btn btn-success"> View Dairy</a>
+                        <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
+                        <span class="float-right">
+                        </span>
+                      </p>
+                    </div>
+                    <!-- /.post -->
+
+                    <!-- Post -->
+                    <div class="post">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
+                        <span class="username">
+                          <a href="#">Jones</a>
+                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                        </span>
+                        <span class="description">5 days ago</span>
+                      </div>
+                      <!-- /.user-block -->
+                      <div class="row mb-3">
+                        <div class="col-sm-6">
+                          <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <img class="img-fluid mb-3" src="../../dist/img/photo2.png" alt="Photo">
+                              <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-6">
+                              <img class="img-fluid mb-3" src="../../dist/img/photo4.jpg" alt="Photo">
+                              <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
+                            </div>
+                            <!-- /.col -->
+                          </div>
+                          <!-- /.row -->
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                      <!-- /.row -->
+
+                      <p>
+                        <a href="#" class="btn btn-success"> View Dairy</a>
+                        <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
+                        <span class="float-right">
+                        </span>
+                      </p>
+                    </div>
+                    <!-- /.post -->
+                    </div>
                   </div>
                   <!-- /.tab-content -->
                 </div><!-- /.card-body -->
@@ -299,12 +359,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
