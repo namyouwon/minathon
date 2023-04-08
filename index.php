@@ -14,7 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Healing | Minathon 2023</title>
-
+  <style>
+     #an {display: none;}
+    </style>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -126,9 +128,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Trend Topic</h1>
-          </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -249,6 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">Diary</a></li>
                   <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Today</a></li>
                   <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Activity</a></li>
+                  <li class="nav-item" id = "an" ><a class="nav-link" href="#person" data-toggle="tab" >Person</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -290,52 +290,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="tab-pane" id="settings">
                       <form class="form-horizontal" method="post">
-                      <?php
-
-function apiGPT(){
-  $apiKey = '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';
-$url = 'https://api.openai.com/v1/chat/completions';
-
-$headers = array(
-    "Authorization: Bearer {$apiKey}",
-    "OpenAI-Organization: YOUR-Organization-ID",
-    "Content-Type: application/json"
-);
-
-// Define messages
-$messages = array();
-$messages[] = array("role" => "user", "content" => "Hello future overlord!");
-
-// Define data
-$data = array();
-$data["model"] = "gpt-3.5-turbo";
-$data["messages"] = $messages;
-$data["max_tokens"] = 50;
-
-// init curl
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_POST, 1);
-curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-$result = curl_exec($curl);
-if (curl_errno($curl)) {
-    echo 'Error:' . curl_error($curl);
-} else {
-  echo $result;
-}
-
-curl_close($curl);
-}
-  
-?>
-
+               
 
                       <div class="form-group row">
                           <label for="inputName" class="col-sm-2 col-form-label">Question</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="input" id="inputQuetion" placeholder="Question" value="<?php apiGPT();?>">
+                            <input type="text" class="form-control" name="input" id="inputQuetion" placeholder="Question" >
                           </div>
                         </div>
                         <div class="form-group row">
@@ -368,7 +328,24 @@ curl_close($curl);
                       <div class="user-block">
                         <img class="img-circle img-bordered-sm" src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="user image">
                         <span class="username">
-                          <a href="#">Cỏ xanh</a>
+                          <a href="#an">Cỏ xanh</a>
+                          <script>
+                            // Lấy đối tượng HTML của liên kết
+                              var link = document.querySelector('a[href="#an"]');
+
+                              // Thêm sự kiện "click" cho liên kết
+                              link.addEventListener('click', function(event) {
+                                // Ngăn chặn mặc định hành vi của liên kết (đi đến trang khác)
+                                event.preventDefault();
+
+                                // Lấy đối tượng HTML của đối tượng được chuyển đến
+                                var target = document.querySelector(this.getAttribute('href'));
+
+                                // Thay đổi thuộc tính "display" của đối tượng thành "block"
+                                target.style.display = "block";
+                              });
+
+                          </script>
                         </span>
                         <span class="description">7:30 PM today</span>
                       </div>
@@ -451,7 +428,7 @@ curl_close($curl);
                         <!-- /.col -->
                       </div>
                       <!-- /.row -->
-
+                    
                       <p>
                         <a href="#" class="btn btn-success"> View Dairy</a>
                         <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
@@ -461,7 +438,39 @@ curl_close($curl);
                     </div>
                     <!-- /.post -->
                     </div>
+                    <div class="tab-pane" id="person" >
+                      <div class="timeline timeline-inverse >
+                        <!-- timeline time label -->
+                        <?php
+                        $sqlListDiary = "SELECT * FROM diary";
+                        $listDiary = mysqli_query($mysqli, $sqlListDiary);
+                        foreach ($listDiary as $item) {
+                        ?>
+                          <div class="time-label">
+                            <span class="bg-danger">
+                              <?= $item['Date'] ?>
+                            </span>
+                          </div>
+                          <div>
+                            <i class="fas fa-envelope bg-primary"></i>
+                            <div class="timeline-item">
+                              <span class="time"><i class="far fa-clock"></i> 12:05</span>
+                              <h3 class="timeline-header"><a href="#"><?=$item['Title']?></a></h3>
+                              <div class="timeline-body">
+                              <?=$item['Describe detail']?>
+                              </div>
+                              <div class="timeline-footer">
+                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                              </div>
+                            </div>  
+                          </div>
+                        <?php
+                        }
+                        ?>
+                      </div>
+                    </div>
                   </div>
+                      
                   <!-- /.tab-content -->
                 </div><!-- /.card-body -->
               </div>
