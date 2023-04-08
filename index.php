@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       background-repeat: no-repeat;
       background-size: cover;
     }
-
     .card {
       background-image: url("https://c.wallhere.com/photos/4f/99/P30_pro_colorful_cyan_background-1713711.jpg!d");
       background-repeat: no-repeat;
@@ -31,22 +30,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../minathon/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../minathon/dist/css/adminlte.min.css">
 </head>
 
 <body class="text-dark">
   <!-- Navbar -->
-  <nav class=" navbar navbar-expand">
+  <nav  class=" navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
-    <ul class="navbar-nav">
+    <!-- <h1  font-family: Verdana; class="navbar-nav" >
       Healing
-    </ul>
-
+    </h1> -->
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="" class="nav-link">Home</a>
+      </li>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block" style="display: none;">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar " type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
@@ -108,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+        
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">15 Notifications</span>
@@ -140,12 +162,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Profile</h1>
+            <h1></h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">User Profile</li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Nơi bạn chia sẻ</li>
             </ol>
           </div>
         </div>
@@ -168,6 +190,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card-body p-0" style="display: block;">
                   <ul class="products-list product-list-in-card">
                     <li class="item">
+                    <div class="product-img">
+                      <img src="dist/img/default-150x150.png" alt="Product Image" >
+                    </div>
                       <div class="product-info">
                         <a href="#" class="product-title">Family invoice</a>
                       </div>
@@ -268,11 +293,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <div class="tab-pane" id="settings">
                     <form class="form-horizontal" method="post">
                       <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Suggest</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="inputSuggest" id="inputSuggest" placeholder="Suggest">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" name="inputTitle" id="inputTitle" placeholder="Title">
                         </div>
                       </div>
+
                       <div class="form-group row">
                         <label for="inputExperience" class="col-sm-2 col-form-label">Diary</label>
                         <div class="col-sm-10">
@@ -346,7 +379,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Post -->
                     <div class="post">
                       <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
+                        <img class="img-circle img-bordered-sm" src="../../minathon/dist/img/user6-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Jones</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -356,19 +389,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       <!-- /.user-block -->
                       <div class="row mb-3">
                         <div class="col-sm-6">
-                          <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
+                          <img class="img-fluid" src="../../minathon/dist/img/photo1.png" alt="Photo">
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                           <div class="row">
                             <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo2.png" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
+                              <img class="img-fluid mb-3" src="../../minathon/dist/img/photo2.png" alt="Photo">
+                              <img class="img-fluid" src="../../minathon/dist/img/photo3.jpg" alt="Photo">
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo4.jpg" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
+                              <img class="img-fluid mb-3" src="../../minathon/dist/img/photo4.jpg" alt="Photo">
+                              <img class="img-fluid" src="../../minathon/dist/img/photo1.png" alt="Photo">
                             </div>
                             <!-- /.col -->
                           </div>
@@ -406,13 +439,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="../../minathon/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../minathon/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="../../dist/js/adminlte.min.js"></script>
+  <script src="../../minathon/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="../../dist/js/demo.js"></script>
+  <script src="../../minathon/dist/js/demo.js"></script>
 </body>
 
 </html>
