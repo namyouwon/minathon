@@ -18,9 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../minathon/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../minathon/dist/css/adminlte.min.css">
 </head>
 
 <body class="">
@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Profile</h1>
+            <h1>Trend Topic</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -147,7 +147,75 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
-              <div class="card-body box-profile">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Trending Topic</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0" style="display: block;">
+                <ul class="products-list product-list-in-card pl-2 pr-2">
+                  <li class="item">
+                    <div class="product-img">
+                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                    </div>
+                    <div class="product-info">
+                      <a href="javascript:void(0)" class="product-title">Samsung TV</a>
+                      <span class="product-description">
+                        Samsung 32" 1080p 60Hz LED Smart HDTV.
+                      </span>
+                    </div>
+                  </li>
+                  <!-- /.item -->
+                  <li class="item">
+                    <div class="product-img">
+                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                    </div>
+                    <div class="product-info">
+                      <a href="javascript:void(0)" class="product-title">Bicycle</a>
+                      <span class="product-description">
+                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                      </span>
+                    </div>
+                  </li>
+                  <!-- /.item -->
+                  <li class="item">
+                    <div class="product-img">
+                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                    </div>
+                    <div class="product-info">
+                      <a href="javascript:void(0)" class="product-title">
+                        Xbox One <span class="badge badge-danger float-right">
+                        $350
+                      </span>
+                      </a>
+                      <span class="product-description">
+                        Xbox One Console Bundle with Halo Master Chief Collection.
+                      </span>
+                    </div>
+                  </li>
+                  <!-- /.item -->
+                  <li class="item">
+                    <div class="product-img">
+                      <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                    </div>
+                    <div class="product-info">
+                      <a href="javascript:void(0)" class="product-title">PlayStation 4
+                        <span class="badge badge-success float-right">$399</span></a>
+                      <span class="product-description">
+                        PlayStation 4 500GB Console (PS4)
+                      </span>
+                    </div>
+                  </li>
+                  <!-- /.item -->
+                </ul>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer text-center" style="display: block;">
+                <a href="javascript:void(0)" class="uppercase">View All Topic</a>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+              <!-- <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle" src="https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360">
                 </div>
@@ -168,7 +236,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </ul>
 
                 <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-              </div>
+              </div> -->
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -222,6 +290,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="tab-pane" id="settings">
                       <form class="form-horizontal" method="post">
+                      <?php
+
+function apiGPT(){
+  $apiKey = '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';
+$url = 'https://api.openai.com/v1/chat/completions';
+
+$headers = array(
+    "Authorization: Bearer {$apiKey}",
+    "OpenAI-Organization: YOUR-Organization-ID",
+    "Content-Type: application/json"
+);
+
+// Define messages
+$messages = array();
+$messages[] = array("role" => "user", "content" => "Hello future overlord!");
+
+// Define data
+$data = array();
+$data["model"] = "gpt-3.5-turbo";
+$data["messages"] = $messages;
+$data["max_tokens"] = 50;
+
+// init curl
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_POST, 1);
+curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+$result = curl_exec($curl);
+if (curl_errno($curl)) {
+    echo 'Error:' . curl_error($curl);
+} else {
+  echo $result;
+}
+
+curl_close($curl);
+}
+  
+?>
+
+
+                      <div class="form-group row">
+                          <label for="inputName" class="col-sm-2 col-form-label">Question</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="input" id="inputQuetion" placeholder="Question" value="<?php apiGPT();?>">
+                          </div>
+                        </div>
                         <div class="form-group row">
                           <label for="inputName" class="col-sm-2 col-form-label">Title</label>
                           <div class="col-sm-10">
@@ -367,13 +483,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="../../minathon/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../minathon/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="../../dist/js/adminlte.min.js"></script>
+  <script src="../../minathon/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="../../dist/js/demo.js"></script>
+  <script src="../../minathon/dist/js/demo.js"></script>
 </body>
 
 </html>
