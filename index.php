@@ -4,7 +4,7 @@
 $mysqli = new mysqli("localhost", "root", "", "minathon");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['submitDiary'])) {
-    $sqlInsertDiary = "INSERT INTO `diary`(`Date`, `Title`, `Describe detail`, `accountID`) VALUES ('" . date("Y-m-d") . "','" . $_POST['inputTitle'] . "','" . $_POST['inputDiary'] . "','3')";
+    $sqlInsertDiary = "INSERT INTO `diary`(`Date`, `Title`, `Describe detail`, `accountID`,`Time`,`Topic`) VALUES ('" . date("Y-m-d") . "','" . $_POST['inputTitle'] . "','" . $_POST['inputDiary'] . "','3','" . date('H:i:s') . "','')";
     $diary = mysqli_query($mysqli, $sqlInsertDiary);
   }
 }
@@ -12,6 +12,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
   <meta charset="utf-8">
+  <style>
+    body {
+      background-image: url("https://inngochuong.com/uploads/images/mau-san-pham/mau-backgroud-dep-don-gian/mau-background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .card {
+      background-image: url("https://c.wallhere.com/photos/4f/99/P30_pro_colorful_cyan_background-1713711.jpg!d");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Healing | Minathon 2023</title>
 
@@ -23,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
 
-<body class="">
+<body class="text-dark">
   <!-- Navbar -->
-  <nav class=" navbar navbar-expand navbar-white navbar-light">
+  <nav class=" navbar navbar-expand">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       Healing
@@ -140,113 +153,142 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content ">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
 
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
-              <div class="card-body box-profile">
-                <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle" src="https://cdn-icons-png.flaticon.com/512/147/147144.png?w=360">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Trending Topic</h3>
                 </div>
-
-                <h3 class="profile-username text-center">Nina Mcintire</h3>
-                <p class="text-muted text-center">Software Engineer</p>
-
-                <ul class="list-group list-group-unbordered mb-3">
-                  <li class="list-group-item">
-                    <b>Followers</b> <a class="float-right">1,322</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Following</b> <a class="float-right">543</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Friends</b> <a class="float-right">13,287</a>
-                  </li>
-                </ul>
-
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                <!-- /.card-header -->
+                <div class="card-body p-0" style="display: block;">
+                  <ul class="products-list product-list-in-card">
+                    <li class="item">
+                      <div class="product-info">
+                        <a href="#" class="product-title">Family invoice</a>
+                      </div>
+                    </li>
+                    <!-- /.item -->
+                    <li class="item">
+                      <div class="product-info">
+                        <a href="#" class="product-title">Friend</a>
+                      </div>
+                    </li>
+                    <!-- /.item -->
+                    <li class="item">
+                      <div class="product-info">
+                        <a href="#" class="product-title">Relationships</a>
+                      </div>
+                    </li>
+                    <!-- /.item -->
+                    <li class="item">
+                      <div class="product-info">
+                        <a href="#" class="product-title">Travel</a>
+                      </div>
+                    </li>
+                    <!-- /.item -->
+                  </ul>
+                </div>
+                <!-- /.card-body -->
               </div>
-              <!-- /.card-body -->
             </div>
+
             <!-- /.card -->
           </div>
           <!-- /.col -->
-          <div class="col-md-9">
-            <div class="card">
-              <div class="card-header p-2">
+          <div class="col-md-9 ">
+            <div class="card ">
+              <div class="card-header p-2 ">
                 <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">Diary</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                  <li class="nav-item"><a class="nav-link " href="#timeline" data-toggle="tab">Diary</a></li>
                   <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Today</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Activity</a></li>
                 </ul>
               </div><!-- /.card-header -->
-              <div class="card-body">
+              <div class="card-body ">
                 <div class="tab-content">
                   <!-- /.tab-pane -->
-                    <div class="active tab-pane" id="timeline">
+                  <div class=" tab-pane" id="timeline">
                     <!-- The timeline -->
                     <div class="timeline timeline-inverse">
                       <!-- timeline time label -->
                       <?php
-                      $sqlListDiary = "SELECT * FROM diary";
+                      $sqlListDiary = "SELECT * FROM `diary` ORDER BY `Time` DESC";
                       $listDiary = mysqli_query($mysqli, $sqlListDiary);
+                      $temp = 0;
                       foreach ($listDiary as $item) {
+                        if ($item['Date'] == $temp) {
                       ?>
-                        <div class="time-label">
-                          <span class="bg-danger">
-                            <?= $item['Date'] ?>
-                          </span>
-                        </div>
-                        <div>
-                          <i class="fas fa-envelope bg-primary"></i>
-                          <div class="timeline-item">
-                            <span class="time"><i class="far fa-clock"></i> 12:05</span>
-                            <h3 class="timeline-header"><a href="#"><?=$item['Title']?></a></h3>
-                            <div class="timeline-body">
-                             <?=$item['Describe detail']?>
+                          <div>
+                            <i class="fas fa-envelope bg-primary"></i>
+                            <div class="timeline-item">
+                              <span class="time"><i class="far fa-clock"></i> <?= $item['Time'] ?></span>
+                              <h3 class="timeline-header"><a href="#"><?= $item['Title'] ?></a></h3>
+                              <div class="timeline-body">
+                                <?= $item['Describe detail'] ?>
+                              </div>
+                              <div class="timeline-footer">
+                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                              </div>
                             </div>
-                            <div class="timeline-footer">
-                              <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                          </div>
+                        <?php
+                        } else {
+                          $temp = $item['Date'];
+                        ?>
+                          <div class="time-label">
+                            <span class="bg-success">
+                              <?= $item['Date'] ?>
+                            </span>
+                          </div>
+                          <div>
+                            <i class="fas fa-envelope bg-primary"></i>
+                            <div class="timeline-item">
+                              <span class="time"><i class="far fa-clock"></i> <?= $item['Time'] ?></span>
+                              <h3 class="timeline-header"><a href="#"><?= $item['Title'] ?></a></h3>
+                              <div class="timeline-body">
+                                <?= $item['Describe detail'] ?>
+                              </div>
+                              <div class="timeline-footer">
+                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                              </div>
                             </div>
-                          </div>  
-                        </div>
+                          </div>
                       <?php
+                        }
                       }
                       ?>
                     </div>
-                    </div>
-                    <!-- /.tab-pane -->
+                  </div>
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="settings">
+                    <form class="form-horizontal" method="post">
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="inputTitle" id="inputTitle" placeholder="Title">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputExperience" class="col-sm-2 col-form-label">Diary</label>
+                        <div class="col-sm-10">
+                          <textarea style="height:200px" class="form-control" type="text" class="form-control" name="inputDiary" id="inputDiary" placeholder="Input diary"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <input type="submit" name="submitDiary" class="btn btn-success" value="Post"></input>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.tab-pane -->
 
-                    <div class="tab-pane" id="settings">
-                      <form class="form-horizontal" method="post">
-                        <div class="form-group row">
-                          <label for="inputName" class="col-sm-2 col-form-label">Title</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" name="inputTitle" id="inputTitle" placeholder="Title">
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputExperience" class="col-sm-2 col-form-label">Diary</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" name="inputDiary" id="inputDiary" placeholder="Diary"></input>
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                          <input type="file" class="form-control" id="customFile" />
-                        </div>
-                        <div class="form-group row">
-                          <div class="offset-sm-2 col-sm-10">
-                            <input type="submit" name="submitDiary" class="btn btn-success" value="Post"></input>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- /.tab-pane -->
-
-                    <div class="tab-pane" id="activity">
+                  <div class=" active tab-pane" id="activity">
                     <!-- Post -->
                     <div class="post">
                       <div class="user-block">
@@ -266,7 +308,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       </p>
 
                       <p>
-                        <a href="#" class="btn btn-success"> View Dairy</a>
+                        <a href="green.php" class="btn btn-success"> View Dairy</a>
                         <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
                         <span class="float-right">
                         </span>
@@ -344,16 +386,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       </p>
                     </div>
                     <!-- /.post -->
-                    </div>
                   </div>
-                  <!-- /.tab-content -->
-                </div><!-- /.card-body -->
-              </div>
-              <!-- /.card -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
             </div>
-            <!-- /.col -->
+            <!-- /.card -->
           </div>
-          <!-- /.row -->
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
