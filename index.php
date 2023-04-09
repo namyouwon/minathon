@@ -190,9 +190,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card-body p-0" style="display: block;">
                   <ul class="products-list product-list-in-card">
                     <li class="item">
-                    <div class="product-img">
-                      <img src="dist/img/default-150x150.png" alt="Product Image" >
-                    </div>
+               
                       <div class="product-info">
                         <a href="#" class="product-title">Family invoice</a>
                       </div>
