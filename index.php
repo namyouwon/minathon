@@ -166,8 +166,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Nơi bạn chia sẻ</li>
+              <li class="breadcrumb-item"><a href="#">Home page</a></li>
+              <li class="breadcrumb-item active">Where you share</li>
             </ol>
           </div>
         </div>
@@ -192,7 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li class="item">
                
                       <div class="product-info">
-                        <a href="#" class="product-title">Family invoice</a>
+                        <a href="family.php" class="product-title">Family invoice</a>
                       </div>
                     </li>
                     <!-- /.item -->
@@ -293,7 +293,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Suggest</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="inputSuggest" id="inputSuggest" placeholder="Suggest">
+                          <input type="text" class="form-control" name="inputSuggest" id="inputSuggest" placeholder="Suggest" value = "Tại sao chỉ cần cảm thấy vui vẻ trong hiện tại lại đủ để tạo nên những ngày xứng đáng và trân trọng?">
                         </div>
                       </div>
 
