@@ -17,43 +17,26 @@
     <input type="text" id="output" size="50">
 
     <script>
-        function generateText() {
-            const prompt = document.getElementById('text-input').value;
-            const apiKey = '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';
-            const apiUrl = '    ';
-            const maxTokens = 100;
-            const temperature = 0.5;
-            const n = 1;
-            const stop = '\n';
+        // Set up the request parameters
+        const apiKey = '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';
+        const endpoint = 'https://api.openai.com/v1/engines/ada/completions',
+            prompt = 'The quick brown fox',
+            length = 50;
 
-            const data = {
-                prompt,
-                max_tokens: maxTokens,
-                temperature,
-                n,
-                stop,
-            };
+        // Set up the fetch request
+        const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + apiKey },
+        body: JSON.stringify({ prompt: prompt, length: length })
+        };
 
-            const headers = {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`,
-            };
+        // Send the fetch request and handle the response
+        fetch(endpoint, requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data.choices[0].text))
+        .catch(error => console.log(error));
 
-            fetch(apiUrl, {
-                    method: 'POST',
-                    headers: headers,
-                    body: JSON.stringify(data),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    const output = document.getElementById('output');
-                    const generatedText = data.choices[0].text.trim();
-                    output.value = generatedText;
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        }
     </script>
 </body>
 

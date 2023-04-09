@@ -347,23 +347,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <!-- /.post -->
 
+
+                        <!-- Post -->
+                    <div class="post">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="user image">
+                        <span class="username">
+                          <a href="#">Đại bàng</a>
+                        </span>
+                        <span class="description">7:30 PM today</span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                      Lá mơ lông có tác dụng làm dịu cơn đau dạ dày và giảm các triệu chứng khác như buồn nôn, nôn mửa, đầy hơi.
+                    Cách sử dụng là lấy khoảng 10-15 lá mơ lông tươi rửa sạch, ngâm trong nước muối loãng khoảng 30 phút rồi giã nhuyễn vắt nước để uống.
+                    Ngoài ra, nên ăn nhẹ, kiêng thức ăn cay, nóng, chất kích thích và ăn đều đặn, tránh ăn quá no hoặc quá đói.
+                    Nếu triệu chứng không giảm hoặc càng nặng hơn, cần đi khám bác sĩ để được chẩn đoán và điều trị kịp thời.
+                                          </p>
+
+                      <p>
+                        <a href="green.php" class="btn btn-success"> View Dairy</a>
+                        <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
+                        <span class="float-right">
+                        </span>
+                      </p>
+                    </div>
+                    <!-- /.post -->
+
                     <!-- Post -->
                     <div class="post clearfix">
                       <div class="user-block">
                         <img class="img-circle img-bordered-sm" src="https://www.w3schools.com/howto/img_avatar2.png" alt="User Image">
                         <span class="username">
-                          <a href="#">Sói xám</a>
+                          <a href="#">Chim trắng</a>
                         </span>
                         <span class="description">3 days ago</span>
                       </div>
                       <!-- /.user-block -->
                       <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
+                      Sáu tháng sau khi chúng tôi kết hôn, anh ấy bị tai nạn xe hơi.
+                        Khi tỉnh lại thì anh đã mất đi trí nhớ.
+                        Anh ấy đã quên mình có một bạch nguyệt quang cầu mà không được, cũng đã quên mất chúng tôi chỉ là hợp đồng hôn nhân. 
+                        1
+                        Tôi và Phó Kim Minh gặp nhau trong một buổi xem mắt. Anh có bạch nguyệt quang mà mình không thể với tới, tôi cũng có chu sa chí mà mình chưa thể quên đi. 
+                        Để tránh bị ba mẹ đôi bên giục giã, chúng tôi quyết định lập nên một bản hợp đồng hôn nhân. 
+                        Kết hôn được nửa năm, anh chăm sóc tôi rất chu đáo, mọi công việc trong gia đình đều là một tay anh quán xuyến. Ngay cả đồ ăn mà anh làm cũng vừa vặn hợp với khẩu vị của tôi.
+                        Có lần tôi thức khuya làm hợp đồng mà ngủ gục trên bàn làm việc, đến khi tỉnh dậy thì thấy Phó Kim Minh đã hoàn thành giúp tôi, ngày thứ 2 khi lên bàn đàm phán thì mới biết anh chính là bên A.
+                        Phải công nhận một chuyện là anh có vẻ ngoài đẹp trai anh tuấn, năng lực không chê vào đâu được, hoàn toàn đáp ứng được tiêu chuẩn về con rể của mẹ tôi.
+                        Để ba mẹ hai bên yên lòng, tôi và Phó Kim Minh đóng vai là một cặp vợ chồng tình cảm sâu đậm, nhưng tiếc là chúng tôi không hề thích đối phương.
+                        Mặc dù chúng tôi dùng đồ đôi, trong phòng có treo ảnh cưới, nhưng từ khi kết hôn đến nay vẫn ngủ riêng 2 phòng ngủ.
+                        Tôi đã nghĩ, nếu không có sự cố kia xảy ra, tôi và Phó Kim Minh sẽ sống như vậy cho đến cuối đời, là bạn cùng phòng có giấy đăng ký kết hôn.
+                                            </p>
 
                       <p>
                         <a href="#" class="btn btn-success"> View Dairy</a>
@@ -374,40 +408,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <!-- /.post -->
 
-                    <!-- Post -->
-                    <div class="post">
+                                            <!-- Post -->
+                                            <div class="post">
                       <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../minathon/dist/img/user6-128x128.jpg" alt="User Image">
+                        <img class="img-circle img-bordered-sm" src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="user image">
                         <span class="username">
-                          <a href="#">Jones</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                          <a href="#">Tiểu hổ</a>
                         </span>
-                        <span class="description">5 days ago</span>
+                        <span class="description">7:30 PM today</span>
                       </div>
                       <!-- /.user-block -->
-                      <div class="row mb-3">
-                        <div class="col-sm-6">
-                          <img class="img-fluid" src="../../minathon/dist/img/photo1.png" alt="Photo">
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../minathon/dist/img/photo2.png" alt="Photo">
-                              <img class="img-fluid" src="../../minathon/dist/img/photo3.jpg" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../minathon/dist/img/photo4.jpg" alt="Photo">
-                              <img class="img-fluid" src="../../minathon/dist/img/photo1.png" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                          </div>
-                          <!-- /.row -->
-                        </div>
-                        <!-- /.col -->
+                      <p>
+                      Sài Gòn hoa lệ - hoa thì ở chợ Hồ Thị Kỷ, lệ thì cho những ai hay khóc và không chăm lo cho đôi mắt mình.
+Thú nhận đi, đã bao lâu rồi bạn chưa thực sự nâng niu đôi mắt của mình. Đôi mắt chính là nơi chứa cả thế giới quan, là nơi tình yêu, tâm hồn được thể hiện. Vậy nên, hãy quan tâm và yêu thương nó nhiều hơn mỗi ngày nhé.
+Trùng hợp thay, sắp tới đây sẽ có triển lãm nghệ thuật “Mở” Mắt lần đầu tiên do bệnh viện Mắt Sài Gòn tổ chức với hàng trăm nghìn tròng kính cũ được “xin” lại từ những ca phẫu thuật mắt thành công.
+Nếu bạn đang muốn khám phá thêm về sự mới lạ, diệu kỳ của đôi mắt thì hãy đến với triển lãm nhé.
+                                          </p>
+
+                      <p>
+                        <a href="green.php" class="btn btn-success"> View Dairy</a>
+                        <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
+                        <span class="float-right">
+                        </span>
+                      </p>
+                    </div>
+                    <!-- /.post -->
+
+                    <!-- Post -->
+                    <div class="post clearfix">
+                      <div class="user-block">
+                        <img class="img-circle img-bordered-sm" src="https://www.w3schools.com/howto/img_avatar2.png" alt="User Image">
+                        <span class="username">
+                          <a href="#">Sơn lâm</a>
+                        </span>
+                        <span class="description">3 days ago</span>
                       </div>
-                      <!-- /.row -->
+                      <!-- /.user-block -->
+                      <p>
+                      Mong rằng những ngày tháng tuổi trẻ không bị hoang phí, có thể tìm ra một hướng đi cho bản thân, có một công việc khiến mình có động lực thức dậy mỗi sáng.
+Bây giờ phải biết trân trọng những đồng tiền kiếm ra, có thể chưa nhiều nhưng là mồ hôi và công sức, sẽ cố gắng làm được nhiều hơn thế.
+Chuyện gia đình nhất định phải đặt lên hàng đầu, có thể báo hiếu thì nhất định không để bố mẹ vất vả hơn. Mai kia lúc mệt mỏi quá, vẫn có nơi bình yên để trở về.
+Chuyện tình cảm đừng để phải bi lụy, cô đơn cũng được, bên cạnh nhau cũng được, phải học cách buông bỏ. Người tốt thì trân trọng, kẻ xấu thì rời xa, bản thân mình còn chưa biết tự yêu thương thì đừng mong chờ người khác.
+Cuộc sống có thể còn nhiều ngã rẽ nữa, lấy đi nhiều nụ cười và nước mắt, chỉ mong bản thân đủ mạnh mẽ, đủ kiên trì.
+                                            </p>
 
                       <p>
                         <a href="#" class="btn btn-success"> View Dairy</a>
