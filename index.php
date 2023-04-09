@@ -38,15 +38,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body class="text-dark">
   <!-- Navbar -->
-  <nav class=" navbar navbar-expand">
+  <nav  class=" navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
-    <ul class="navbar-nav">
+    <!-- <h1  font-family: Verdana; class="navbar-nav" >
       Healing
-    </ul>
-
+    </h1> -->
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="" class="nav-link">Home</a>
+      </li>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block" style="display: none;">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar " type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
@@ -56,13 +79,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Brad Diesel
+                  Positive message
                   <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                 </h3>
-                <p class="text-sm">Call me whenever you can...</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
             </div>
@@ -72,13 +94,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="https://cdn.pixabay.com/photo/2017/01/31/21/23/avatar-2027366__340.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  John Pierce
+                  Negative message
                   <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
                 </h3>
-                <p class="text-sm">I got your message bro</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
             </div>
@@ -88,13 +109,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Nora Silvester
+                  Positive image
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                 </h3>
-                <p class="text-sm">The subject goes here</p>
                 <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
               </div>
             </div>
@@ -108,23 +128,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+        
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <span class="dropdown-item dropdown-header">Notifications</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <i class="fas fa-envelope mr-2"></i> 3 new messages
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <i class="fas fa-users mr-2"></i> 8 new follow
             <span class="float-right text-muted text-sm">12 hours</span>
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
+            <i class="fas fa-file mr-2"></i> 3 new post
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
           <div class="dropdown-divider"></div>
@@ -169,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <ul class="products-list product-list-in-card">
                     <li class="item">
                       <div class="product-info">
-                        <a href="#" class="product-title">Family invoice</a>
+                        <a href="family.php" class="product-title">Family</a>
                       </div>
                     </li>
                     <!-- /.item -->
@@ -206,7 +226,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
                   <li class="nav-item"><a class="nav-link " href="#timeline" data-toggle="tab">Diary</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Today</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Post</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body ">
@@ -217,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="timeline timeline-inverse">
                       <!-- timeline time label -->
                       <?php
-                      $sqlListDiary = "SELECT * FROM `diary` ORDER BY `Time` DESC";
+                      $sqlListDiary = "SELECT * FROM `diary` ORDER BY `Date` DESC";
                       $listDiary = mysqli_query($mysqli, $sqlListDiary);
                       $temp = 0;
                       foreach ($listDiary as $item) {
@@ -230,9 +250,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               <h3 class="timeline-header"><a href="#"><?= $item['Title'] ?></a></h3>
                               <div class="timeline-body">
                                 <?= $item['Describe detail'] ?>
-                              </div>
-                              <div class="timeline-footer">
-                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
                               </div>
                             </div>
                           </div>
@@ -252,9 +269,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               <h3 class="timeline-header"><a href="#"><?= $item['Title'] ?></a></h3>
                               <div class="timeline-body">
                                 <?= $item['Describe detail'] ?>
-                              </div>
-                              <div class="timeline-footer">
-                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
                               </div>
                             </div>
                           </div>
@@ -344,47 +358,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- /.post -->
 
                     <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Jones</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">5 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <div class="row mb-3">
-                        <div class="col-sm-6">
-                          <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo2.png" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo4.jpg" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                          </div>
-                          <!-- /.row -->
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                      <!-- /.row -->
-
-                      <p>
-                        <a href="#" class="btn btn-success"> View Dairy</a>
-                        <a href="#" class="link-black text-sm float-right"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                        </span>
-                      </p>
-                    </div>
+                  
                     <!-- /.post -->
                   </div>
                 </div>

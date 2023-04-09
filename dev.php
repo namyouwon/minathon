@@ -19,8 +19,8 @@
     <script>
         function generateText() {
             const prompt = document.getElementById('text-input').value;
-            const apiKey = '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';
-            const apiUrl = '    ';
+            const apiKey = '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';
+            const apiUrl = 'https://api.openai.com/v1/chat/completions';
             const maxTokens = 100;
             const temperature = 0.5;
             const n = 1;

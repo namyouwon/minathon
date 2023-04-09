@@ -24,6 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .chatbox{
+            background-image: url("");
+            background-color: white;
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Healing | Minathon 2023</title>
@@ -196,6 +200,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <!-- /.card-body -->
                             </div>
                         </div>
+                        <div class="card direct-chat direct-chat-warning chatbox">
+                            <div class=" card-header text-dark " style="background-color:rgb(133, 220, 244)">
+                                <h3 class="card-title">Cỏ xanh</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <div class="direct-chat-messages">
+                                <!-- <div class="direct-chat-msg right">
+                                    <div class="direct-chat-infos clearfix">
+                                    <span class="direct-chat-name float-right">You</span>
+                                    <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                    </div>
+                                    <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                    <div class="direct-chat-text">
+                                    I would love to.
+                                    </div>
+                                </div> -->
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <form action="#" method="post">
+                                <div class="input-group">
+                                    <input type="text" name="message" placeholder="Message ..." class="form-control">
+                                    <span class="input-group-append">
+                                    <button type="button" class="btn btn-primary">Send</button>
+                                    </span>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
 
                         <!-- /.card -->
                     </div>
@@ -231,9 +272,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                             <div class="timeline-body">
                                                                 <?= $item['Describe detail'] ?>
                                                             </div>
-                                                            <div class="timeline-footer">
-                                                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 <?php
@@ -252,9 +290,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                             <h3 class="timeline-header"><a href="#"><?= $item['Title'] ?></a></h3>
                                                             <div class="timeline-body">
                                                                 <?= $item['Describe detail'] ?>
-                                                            </div>
-                                                            <div class="timeline-footer">
-                                                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -320,9 +355,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                     Không phải cứ có một người mòn mỏi chờ đợi, 
                                                     thì sẽ có một người trở về,
                                                     Thôi thì có những mối quan hệ nếu có thể rời xa sớm một chút, bạn sẽ bớt đau lòng..
-                                                </div>
-                                                <div class="timeline-footer">
-                                                    <a href="#" class="btn btn-primary btn-sm">Read more</a>
                                                 </div>
                                             </div>
                                             </div>
